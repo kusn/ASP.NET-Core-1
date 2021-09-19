@@ -29,7 +29,17 @@ namespace WebStore.Controllers
             var employee = _Employees.SingleOrDefault(x => x.Id == id);
             /*if (employee is null)
                 return NotFound();*/
+            //ViewBag.Employee = employee;
             
+            return View(employee);
+        }
+
+        public IActionResult Edit(int id)               // // http://localhost:5000/Home/Edit/id
+        {
+            var employee = _Employees.SingleOrDefault(x => x.Id == id);
+            if (employee is null)
+                return NotFound();
+
             return View(employee);
         }
     }

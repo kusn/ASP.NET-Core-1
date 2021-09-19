@@ -1244,3 +1244,4 @@ D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Logi
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotFound\Index.cshtml.g.cs
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ProductDetails\Index.cshtml.g.cs
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Edit.cshtml.g.cs
