@@ -6470,24 +6470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Serg\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\serji\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\ASP.NET-Core-1\\WebStore\\WebStore\\WebStore.csproj",
+      "projectUniqueName": "D:\\Учеба\\ASP.NET-Core-1\\WebStore\\WebStore\\WebStore.csproj",
       "projectName": "WebStore",
-      "projectPath": "D:\\Projects\\ASP.NET-Core-1\\WebStore\\WebStore\\WebStore.csproj",
-      "packagesPath": "C:\\Users\\Serg\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\ASP.NET-Core-1\\WebStore\\WebStore\\obj\\",
+      "projectPath": "D:\\Учеба\\ASP.NET-Core-1\\WebStore\\WebStore\\WebStore.csproj",
+      "packagesPath": "C:\\Users\\serji\\.nuget\\packages\\",
+      "outputPath": "D:\\Учеба\\ASP.NET-Core-1\\WebStore\\WebStore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Serg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\serji\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

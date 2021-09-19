@@ -1234,3 +1234,13 @@ D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Cart\I
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\BlogSingle\Index.cshtml.g.cs
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotFound\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\WebStore.csproj.AssemblyReference.cache
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\BlogSingle\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Checkout\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ContactUs\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotFound\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ProductDetails\Index.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
