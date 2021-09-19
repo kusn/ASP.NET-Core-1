@@ -42,5 +42,18 @@ namespace WebStore.Controllers
 
             return View(employee);
         }
+
+        [HttpPost]
+        public IActionResult Edit(Employee emp)
+        {
+            _Employees.ElementAt(emp.Id - 1).FirstName = emp.FirstName;
+            _Employees.ElementAt(emp.Id - 1).LastName = emp.LastName;
+            _Employees.ElementAt(emp.Id - 1).Age = emp.Age;
+            _Employees.ElementAt(emp.Id - 1).Patronymic = emp.Patronymic;
+            _Employees.ElementAt(emp.Id - 1).DateOfBorn = emp.DateOfBorn;
+            _Employees.ElementAt(emp.Id - 1).DateOfEmployment = emp.DateOfEmployment;
+
+            return RedirectToAction("Index");
+        }
     }
 }
