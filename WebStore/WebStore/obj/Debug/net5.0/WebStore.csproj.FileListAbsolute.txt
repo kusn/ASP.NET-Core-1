@@ -1224,5 +1224,13 @@ D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_MainMenu.cshtml.g.cs
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Scripts.cshtml.g.cs
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Styles.cshtml.g.cs
-D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\__Details.cshtml.g.cs
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Details.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ProductDetails\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ContactUs\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Checkout\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\BlogSingle\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
+D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotFound\Index.cshtml.g.cs
