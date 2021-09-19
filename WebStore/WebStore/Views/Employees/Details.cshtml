@@ -1,12 +1,10 @@
 ﻿@model WebStore.Models.Employee
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Детали</title>
-</head>
-<body>
+@{ 
+    ViewData["Title"] = "Детали";
+}
+
+<div class="container">
     <h3>Сотрудник: @Model.LastName  @Model.FirstName @Model.Patronymic</h3>
     <hr />
 
@@ -38,6 +36,4 @@
     <p>
         <a href="/Home/Employees">Сотрудники</a>
     </p>
-
-</body>
-</html>
+</div>

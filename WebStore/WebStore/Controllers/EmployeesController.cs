@@ -17,22 +17,17 @@ namespace WebStore.Controllers
             _Employees = TestData.Employees;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()                        // http://localhost:5000/Home/Employees
         {
             return View(_Employees);
-        }
-
-        /*public IActionResult Employees()                // http://localhost:5000/Home/Employees
-        {
-            return View(__Employees);
         }
 
         public IActionResult Details(int? id)            // http://localhost:5000/Home/Details/id
         {
             if (id == null) return RedirectToAction("Index");
-            ViewBag.__EmployeeId = id;
+            ViewBag._EmployeeId = id;
 
-            return View(__Employees.Find(x => x.Id == id));
-        }*/
+            return View(_Employees.FirstOrDefault(x => x.Id == id));
+        }
     }
 }
