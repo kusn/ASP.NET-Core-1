@@ -1206,3 +1206,8 @@ D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\WebStore.dll
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\ref\WebStore.dll
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\WebStore.pdb
 D:\Projects\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\WebStore.genruntimeconfig.cache
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Footer.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Header.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Scripts.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Styles.cshtml.g.cs
+D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_MainMenu.cshtml.g.cs
