@@ -25,9 +25,12 @@ namespace WebStore.Controllers
         public IActionResult Details(int? id)            // http://localhost:5000/Home/Details/id
         {
             if (id == null) return RedirectToAction("Index");
-            ViewBag._EmployeeId = id;
-
-            return View(_Employees.FirstOrDefault(x => x.Id == id));
+            
+            var employee = _Employees.SingleOrDefault(x => x.Id == id);
+            /*if (employee is null)
+                return NotFound();*/
+            
+            return View(employee);
         }
     }
 }
