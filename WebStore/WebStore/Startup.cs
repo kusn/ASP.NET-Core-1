@@ -36,6 +36,8 @@ namespace WebStore
 
             app.UseRouting();
 
+            app.UseMiddleware<>();
+
             //var loggin = Configuration["Loggin:LogLevel:Default"];
             app.UseEndpoints(endpoints =>
             {                
