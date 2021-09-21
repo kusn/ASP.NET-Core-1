@@ -8,15 +8,17 @@ using WebStore.Data;
 
 namespace WebStore.Controllers
 {
+    //[Route("Staff/[action]/{id?}")]
     public class EmployeesController : Controller
     {
         private readonly IEnumerable<Employee> _Employees;
-
+                
         public EmployeesController()
         {
             _Employees = TestData.Employees;
         }
 
+        //[Route("[controller]/all")]
         public IActionResult Index()                        // http://localhost:5000/Home/Employees
         {
             return View(_Employees);
