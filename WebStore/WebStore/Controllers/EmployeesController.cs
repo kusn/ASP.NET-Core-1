@@ -7,6 +7,7 @@ using WebStore.Models;
 using WebStore.Data;
 using WebStore.Services.Interfaces;
 using Microsoft.Extensions.Logging;
+using WebStore.ViewModels;
 
 namespace WebStore.Controllers
 {
@@ -40,26 +41,85 @@ namespace WebStore.Controllers
             return View(employee);
         }
 
-        public IActionResult Edit(int id)               // // http://localhost:5000/Home/Edit/id
+        public IActionResult Create()
         {
-            var employee = _Employees.SingleOrDefault(x => x.Id == id);
+            return View("Edit", new EmployeeViewModel());
+        }
+
+        #region Delete
+        public IActionResult Delete(int id)
+        {
+            if (id < 0) return BadRequest();
+
+            var employee = _EmployeesData.GetById(id);
             if (employee is null)
                 return NotFound();
 
-            return View(employee);
+            return View(new EmployeeViewModel
+            {
+                Id = employee.Id,
+                Name = employee.FirstName,
+                LastName = employee.LastName,
+                Patronymic = employee.Patronymic,
+                Age = employee.Age,
+                DateOfBorn = employee.DateOfBorn,
+                DateOfEmployment = employee.DateOfEmployment,
+            });
         }
 
         [HttpPost]
-        public IActionResult Edit(Employee emp)
+        public IActionResult DeleteConfirmed(int id)
         {
-            _Employees.ElementAt(emp.Id - 1).FirstName = emp.FirstName;
-            _Employees.ElementAt(emp.Id - 1).LastName = emp.LastName;
-            _Employees.ElementAt(emp.Id - 1).Age = emp.Age;
-            _Employees.ElementAt(emp.Id - 1).Patronymic = emp.Patronymic;
-            _Employees.ElementAt(emp.Id - 1).DateOfBorn = emp.DateOfBorn;
-            _Employees.ElementAt(emp.Id - 1).DateOfEmployment = emp.DateOfEmployment;
-
-            return RedirectToAction("Index");
+            _EmployeesData.Delete(id);
+            return RedirectToAction(nameof(Index));
         }
+        #endregion
+
+        #region Edit
+        public IActionResult Edit(int? id)               // // http://localhost:5000/Home/Edit/id
+        {
+            if (id is null)
+                return View(new EmployeeViewModel());
+            
+            var employee = _EmployeesData.GetById((int)id);
+            if (employee is null)
+                return NotFound();
+
+            var viewModel = new EmployeeViewModel
+            {
+                Id = employee.Id,
+                Name = employee.FirstName,
+                LastName = employee.LastName,
+                Patronymic = employee.Patronymic,
+                Age = employee.Age,
+                DateOfBorn = employee.DateOfBorn,
+                DateOfEmployment = employee.DateOfEmployment,
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EmployeeViewModel viewModel)
+        {
+            var employee = new Employee
+            {
+                Id = viewModel.Id,
+                FirstName = viewModel.Name,
+                LastName = viewModel.LastName,
+                Patronymic = viewModel.Patronymic,
+                Age = viewModel.Age,
+                DateOfBorn =viewModel.DateOfBorn,
+                DateOfEmployment = viewModel.DateOfEmployment,
+            };
+
+            if (employee.Id == 0)
+                _EmployeesData.Add(employee);
+            else
+                _EmployeesData.Update(employee);
+
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
     }
 }

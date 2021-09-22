@@ -386,8 +386,6 @@ D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\scope
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\WebStore.TagHelpers.input.cache
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\WebStore.TagHelpers.output.cache
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\WebStore.RazorCoreGenerate.cache
-D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Details.cshtml.g.cs
-D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Employees.cshtml.g.cs
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
@@ -1245,3 +1243,28 @@ D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotF
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ProductDetails\Index.cshtml.g.cs
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
 D:\Учеба\ASP.NET-Core-1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Edit.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\WebStore.csproj.AssemblyReference.cache
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\BlogSingle\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Checkout\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ContactUs\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Details.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\_Edit.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Partial\_CategoryTab.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Partial\_Products.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Partial\_RecomendedItems.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Home\Partial\_Slider.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\NotFound\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\ProductDetails\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Footer.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Header.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_LeftSideBar.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_MainMenu.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Scripts.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shared\Partial\_Styles.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Delete.cshtml.g.cs
+D:\Kudryashov\Учеба\ASP.NET Core 1\WebStore\WebStore\obj\Debug\net5.0\Razor\Views\Employees\Edit.cshtml.g.cs
