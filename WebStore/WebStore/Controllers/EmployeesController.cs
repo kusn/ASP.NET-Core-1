@@ -5,35 +5,38 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Models;
 using WebStore.Data;
+using WebStore.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace WebStore.Controllers
 {
     //[Route("Staff/[action]/{id?}")]
     public class EmployeesController : Controller
     {
-        private readonly IEnumerable<Employee> _Employees;
-                
-        public EmployeesController()
-        {
-            _Employees = TestData.Employees;
+        private readonly IEmployeesData _EmployeesData;
+        private readonly ILogger<EmployeesController> _Logger;
+
+
+        public EmployeesController(IEmployeesData EmployeesData, ILogger<EmployeesController> Logger)
+        {            
+            _EmployeesData = EmployeesData;
+            _Logger = Logger;
         }
 
         //[Route("~employees/all")]
         public IActionResult Index()                        // http://localhost:5000/Home/Employees
         {
-            return View(_Employees);
+            return View(_EmployeesData.GetAll());
         }
 
         //[Route("~employees/info-{id}")]
-        public IActionResult Details(int? id)            // http://localhost:5000/Home/Details/id
+        public IActionResult Details(int id)            // http://localhost:5000/Home/Details/id
         {
-            if (id == null) return RedirectToAction("Index");
-            
-            var employee = _Employees.SingleOrDefault(x => x.Id == id);
-            /*if (employee is null)
-                return NotFound();*/
-            //ViewBag.Employee = employee;
-            
+            var employee = _EmployeesData.GetById(id);
+
+            if (employee is null) return NotFound();
+
+
             return View(employee);
         }
 
