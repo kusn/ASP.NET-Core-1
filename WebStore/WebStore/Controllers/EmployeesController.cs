@@ -18,12 +18,13 @@ namespace WebStore.Controllers
             _Employees = TestData.Employees;
         }
 
-        //[Route("[controller]/all")]
+        //[Route("~employees/all")]
         public IActionResult Index()                        // http://localhost:5000/Home/Employees
         {
             return View(_Employees);
         }
 
+        //[Route("~employees/info-{id}")]
         public IActionResult Details(int? id)            // http://localhost:5000/Home/Details/id
         {
             if (id == null) return RedirectToAction("Index");
