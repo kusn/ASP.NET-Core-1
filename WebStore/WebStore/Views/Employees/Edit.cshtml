@@ -5,7 +5,7 @@
 }
 
 <div class="container">
-    <h1>Edit</h1>
+    <h1>Редактирование</h1>
 
     <h4>EmployeeViewModel</h4>
     <hr />
@@ -19,33 +19,33 @@
                     <span asp-validation-for="Id" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
+                    <label asp-for="Name" class="control-label">Имя</label>
+                    <input asp-for="Name" type="text" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="LastName" class="control-label"></label>
-                    <input asp-for="LastName" class="form-control" />
+                    <label asp-for="LastName" class="control-label">Фамилия</label>
+                    <input asp-for="LastName" type="text" class="form-control" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Patronymic" class="control-label"></label>
-                    <input asp-for="Patronymic" class="form-control" />
+                    <label asp-for="Patronymic" class="control-label">Отчество</label>
+                    <input asp-for="Patronymic" type="text" class="form-control" />
                     <span asp-validation-for="Patronymic" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Age" class="control-label"></label>
-                    <input asp-for="Age" class="form-control" />
+                    <label asp-for="Age" class="control-label">Возраст</label>
+                    <input asp-for="Age" type="number" class="form-control" />
                     <span asp-validation-for="Age" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="DateOfBorn" class="control-label"></label>
-                    <input asp-for="DateOfBorn" class="form-control" />
+                    <label asp-for="DateOfBorn" class="control-label">Дата рождения</label>
+                    <input asp-for="DateOfBorn" type="date" class="form-control" />
                     <span asp-validation-for="DateOfBorn" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="DateOfEmployment" class="control-label"></label>
-                    <input asp-for="DateOfEmployment" class="form-control" />
+                    <label asp-for="DateOfEmployment" class="control-label">Дата приёма на работу</label>
+                    <input asp-for="DateOfEmployment" type="date" class="form-control" />
                     <span asp-validation-for="DateOfEmployment" class="text-danger"></span>
                 </div>
                 <div class="form-group">
