@@ -102,6 +102,11 @@ namespace WebStore.Controllers
         [HttpPost]
         public IActionResult Edit(EmployeeViewModel viewModel)
         {
+            if (viewModel.LastName == "Асама" && viewModel.Name == "Бин" && viewModel.Patronymic == "Ладан")
+                ModelState.AddModelError("", "Террористов не берём!");
+            
+            if(!ModelState.IsValid) return View(viewModel);
+
             var employee = new Employee
             {
                 Id = viewModel.Id,
@@ -109,7 +114,7 @@ namespace WebStore.Controllers
                 LastName = viewModel.LastName,
                 Patronymic = viewModel.Patronymic,
                 Age = viewModel.Age,
-                DateOfBorn =viewModel.DateOfBorn,
+                DateOfBorn = viewModel.DateOfBorn,
                 DateOfEmployment = viewModel.DateOfEmployment,
             };
 
