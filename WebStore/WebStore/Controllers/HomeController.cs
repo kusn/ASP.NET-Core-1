@@ -13,5 +13,12 @@ namespace WebStore.Controllers
         {
             return View();
         }
+
+        public IActionResult Status(string Code)
+        {
+            if (Code == "404")
+                return Redirect("/NotFound/Index");     //Перенаправление на http://localhost:5000/NotFound/Index
+            return Content($"Статусный код: {Code}");
+        }
     }
 }

@@ -35,6 +35,8 @@ namespace WebStore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStatusCodePagesWithReExecute("/Home/Status/", "?code={0}");
+
             app.UseStaticFiles();
 
             app.UseRouting();
