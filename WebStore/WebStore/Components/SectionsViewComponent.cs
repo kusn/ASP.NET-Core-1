@@ -10,12 +10,12 @@ namespace WebStore.Components
 {
     public class SectionsViewComponent : ViewComponent
     {
-        public IProductData _ProductData { get; }
+        private readonly IProductData _ProductData;
 
-        SectionsViewComponent(IProductData ProductData)
+        public SectionsViewComponent(IProductData ProductData)
         {
             _ProductData = ProductData;
-        }        
+        }
 
         public IViewComponentResult Invoke()
         {
@@ -31,9 +31,9 @@ namespace WebStore.Components
                     Order = s.Order,
                 }).ToList();
 
-            foreach(var parentSection in parentSectionsViews)
+            foreach (var parentSection in parentSectionsViews)
             {
-                var childs = sections.Where(s => s.Id == parentSection.Id);
+                var childs = sections.Where(s => s.ParentId == parentSection.Id);
 
                 foreach (var childSections in childs)
                 {
@@ -46,7 +46,7 @@ namespace WebStore.Components
                     });
                 }
 
-                parentSection.ChildSections.Sort((a, b) => 
+                parentSection.ChildSections.Sort((a, b) =>
                     Comparer<int>.Default.Compare(a.Order, b.Order));
             }
 
