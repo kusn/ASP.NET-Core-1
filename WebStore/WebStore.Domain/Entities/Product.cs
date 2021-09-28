@@ -10,7 +10,7 @@ using WebStore.Domain.Entities.Base.Interfaces;
 
 namespace WebStore.Domain.Entities
 {
-    [Index(nameof(Name)]
+    [Index(nameof(Name))]
     public class Product : NamedEntity, IOrderedEntity
     {
         public int Order { get; set; }
