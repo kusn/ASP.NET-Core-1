@@ -2,31 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebStore.DAL.Context;
 using WebStore.Data;
 using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Services.Interfaces;
 
-namespace WebStore.Services
+namespace WebStore.Services.InSQL
 {
-    public class InMemoryProductData : IProductData
+    public class SqlProductData : IProductData
     {
-        public IEnumerable<Brand> GetBrands()
+        private readonly WebStoreDB _db;
+
+        public SqlProductData(WebStoreDB db)
         {
-            return TestData.Brands;
+            _db = db;
         }
 
-        public IEnumerable<Section> GetSections()
+        public IEnumerable<Brand> GetBrands()
         {
-            return TestData.Sections;
+            return _db.Brands;
         }
 
         public IEnumerable<Product> GetProducts(ProductFilter Filter = null)
         {
-            IEnumerable<Product> query = TestData.Products;
-
-            //if (Filter?.SectionId != null)
-            //    query = query.Where(p => p.SectionId == Filter?.SectionId);
+            IQueryable<Product> query = _db.Products;
+                        
             if (Filter?.SectionId is { } section_id)
                 query = query.Where(p => p.SectionId == section_id);
 
@@ -34,6 +35,11 @@ namespace WebStore.Services
                 query = query.Where(p => p.SectionId == brand_id);
 
             return query;
+        }
+
+        public IEnumerable<Section> GetSections()
+        {
+            return _db.Sections;
         }
     }
 }
