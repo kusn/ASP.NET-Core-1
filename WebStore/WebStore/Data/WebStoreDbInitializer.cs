@@ -44,6 +44,12 @@ namespace WebStore.Data
                 _Logger.LogInformation("Инициализация БД информацией о товарах не требуется");
                 return;
             }
+
+            var sections_pool = TestData.Sections.ToDictionary(section => section.Id);
+            var brands_pool = TestData.Brands.ToDictionary(brand => brand.Id);
+
+            foreach (var child_section in TestData.Sections.Where(s => s.ParentId is not null))
+                child_section.Parent = sections_pool[(int)child_section.ParentId];
             
             _Logger.LogInformation("Запись секций...");
             await using (await _db.Database.BeginTransactionAsync())
