@@ -20,6 +20,8 @@ namespace WebStore.Controllers
             _SignInManager = SignInManager;
         }
 
+        #region Register
+
         public IActionResult Register()
         {
             return View(new RegisterUserViewModel());
@@ -37,7 +39,7 @@ namespace WebStore.Controllers
             };
 
             var register_result = await _UserManager.CreateAsync(user, viewModel.Password);
-            if(register_result.Succeeded)
+            if (register_result.Succeeded)
             {
                 await _SignInManager.SignInAsync(user, false);
 
@@ -49,6 +51,8 @@ namespace WebStore.Controllers
 
             return View(viewModel);
         }
+        
+        #endregion
 
         public IActionResult Login()
         {
