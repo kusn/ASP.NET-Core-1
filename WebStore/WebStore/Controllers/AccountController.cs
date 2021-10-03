@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Domain.Identity;
+using WebStore.ViewModels.Identity;
 
 namespace WebStore.Controllers
 {
@@ -21,7 +22,13 @@ namespace WebStore.Controllers
 
         public IActionResult Register()
         {
-            return View();
+            return View(new RegisterUserViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Register(RegisterUserViewModel viewModel)
+        {
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Login()
