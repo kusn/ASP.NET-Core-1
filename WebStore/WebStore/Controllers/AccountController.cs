@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Domain.Identity;
 using WebStore.ViewModels.Identity;
@@ -51,15 +48,48 @@ namespace WebStore.Controllers
 
             return View(viewModel);
         }
-        
+
         #endregion
 
-        public IActionResult Login()
+        #region Login
+
+        public IActionResult Login(string ReturnUrl)
         {
-            return View();
+            return View(new LoginViewModel { ReturnUrl = ReturnUrl });
         }
 
-        public IActionResult Logout() => RedirectToAction("Index", "Home");
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel viewModel)
+        {
+            if (!ModelState.IsValid) return View(viewModel);
+
+            var login_result = await _SignInManager.PasswordSignInAsync(
+                viewModel.UserName,
+                viewModel.Password,
+                viewModel.RememberMe,
+                false);
+
+            if (login_result.Succeeded)
+            {
+                //return Redirect(viewModel.ReturnUrl);   //Не безопасно!!!
+                //if(Url.IsLocalUrl(viewModel.ReturnUrl))
+                //    return Redirect(viewModel.ReturnUrl);
+                //return RedirectToAction("Index", "Home");
+                return LocalRedirect(viewModel.ReturnUrl ?? "/");
+            }
+
+            ModelState.AddModelError("", "Ошибка ввода имени пользователя или пароля");
+
+            return View(viewModel);
+        }
+
+        #endregion
+
+        public async Task<IActionResult> Logout()
+        {
+            await _SignInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
 
 
         public IActionResult AccsessDenied()
