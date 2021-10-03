@@ -25,10 +25,29 @@ namespace WebStore.Controllers
             return View(new RegisterUserViewModel());
         }
 
-        [HttpPost]
-        public IActionResult Register(RegisterUserViewModel viewModel)
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterUserViewModel viewModel)
         {
-            return RedirectToAction("Index", "Home");
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+            var user = new User
+            {
+                UserName = viewModel.UserName,
+            };
+
+            var register_result = await _UserManager.CreateAsync(user, viewModel.Password);
+            if(register_result.Succeeded)
+            {
+                await _SignInManager.SignInAsync(user, false);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            foreach (var error in register_result.Errors)
+                ModelState.AddModelError("", error.Description);
+
+            return View(viewModel);
         }
 
         public IActionResult Login()
