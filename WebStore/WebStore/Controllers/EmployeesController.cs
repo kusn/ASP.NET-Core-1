@@ -8,10 +8,13 @@ using WebStore.Data;
 using WebStore.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 using WebStore.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using WebStore.Domain.Identity;
 
 namespace WebStore.Controllers
 {
     //[Route("Staff/[action]/{id?}")]
+    [Authorize]
     public class EmployeesController : Controller
     {
         private readonly IEmployeesData _EmployeesData;
@@ -47,6 +50,7 @@ namespace WebStore.Controllers
         }
 
         #region Delete
+        [Authorize(Roles = Role.Administrators)]
         public IActionResult Delete(int id)
         {
             if (id < 0) return BadRequest();
@@ -68,6 +72,7 @@ namespace WebStore.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrators)]
         public IActionResult DeleteConfirmed(int id)
         {
             _EmployeesData.Delete(id);
@@ -76,6 +81,7 @@ namespace WebStore.Controllers
         #endregion
 
         #region Edit
+        [Authorize(Roles = Role.Administrators)]
         public IActionResult Edit(int? id)               // // http://localhost:5000/Home/Edit/id
         {
             if (id is null)
@@ -100,6 +106,7 @@ namespace WebStore.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrators)]
         public IActionResult Edit(EmployeeViewModel viewModel)
         {
             if (viewModel.LastName == "Асама" && viewModel.Name == "Бин" && viewModel.Patronymic == "Ладан")
