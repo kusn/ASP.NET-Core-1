@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Domain;
+using WebStore.Infrastructure.Mapping;
 using WebStore.Services.Interfaces;
 using WebStore.ViewModels;
 
@@ -32,18 +33,20 @@ namespace WebStore.Controllers
             {
                 BrandId = BrandId,
                 SectionId = SectionId,
-                Products = products
-                .OrderBy(p => p.Order)
-                .Select(p => new ProductViewModel
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price,
-                    ImageUrl = p.ImageUrl,
-                })
+                Products = products.OrderBy(p => p.Order).ToView()
             };
             
             return View(viewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var product = _ProductData.GetProductById(id);
+
+            if (product is null)
+                return NotFound();
+
+            return View(product.ToView());
         }
     }
 }

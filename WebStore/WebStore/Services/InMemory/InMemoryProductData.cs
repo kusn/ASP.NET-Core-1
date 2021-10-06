@@ -16,10 +16,14 @@ namespace WebStore.Services.InMemory
             return TestData.Brands;
         }
 
+        public Brand GetBrandById(int id) => TestData.Brands.FirstOrDefault(b => b.Id == id);
+
         public IEnumerable<Section> GetSections()
         {
             return TestData.Sections;
         }
+
+        public Section GetSectionById(int id) => TestData.Sections.FirstOrDefault(s => s.Id == id);
 
         public IEnumerable<Product> GetProducts(ProductFilter Filter = null)
         {
@@ -34,6 +38,11 @@ namespace WebStore.Services.InMemory
                 query = query.Where(p => p.SectionId == brand_id);
 
             return query;
+        }
+
+        public Product GetProductById(int id)
+        {
+            return TestData.Products.FirstOrDefault(p => p.Id == id);
         }
     }
 }
