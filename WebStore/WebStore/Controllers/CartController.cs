@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Services.Interfaces;
+using WebStore.ViewModels;
 
 namespace WebStore.Controllers
 {
@@ -11,14 +13,14 @@ namespace WebStore.Controllers
     {
         private readonly ICartService _CartService;
 
-        public CartController(ICartService CartService)
+        public CartController(ICartService CartService, IOrderService orderService)
         {
             _CartService = CartService;
         }
 
         public IActionResult Index()
         {
-            return View(_CartService.GetViewModel());
+            return View(new CartOrderViewModel { Cart = _CartService.GetViewModel() });
         }
 
         public IActionResult Add(int id)
@@ -37,6 +39,30 @@ namespace WebStore.Controllers
         {
             _CartService.Remove(id);
             return RedirectToAction("Index", "Cart");
+        }
+
+        [Authorize]
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout(OrderViewModel orderViewModel, [FromServices] IOrderService orderService)
+        {
+            if (!ModelState.IsValid)
+                return View(nameof(Index), new CartOrderViewModel
+                {
+                    Cart = _CartService.GetViewModel(),
+                    Order = orderViewModel,
+                });
+
+            var order = await orderService.CreateOrder(
+                User.Identity.Name,
+                _CartService.GetViewModel(),
+                orderViewModel);
+
+            return RedirectToAction(nameof(OrderConfirmed), new { Id = order.Id});
+        }
+
+        public IActionResult OrderConfirmed(int id)
+        {
+            return View();
         }
     }
 }

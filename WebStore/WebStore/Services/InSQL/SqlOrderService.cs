@@ -13,12 +13,12 @@ using WebStore.ViewModels;
 
 namespace WebStore.Services.InSQL
 {
-    public class SqlDataService : IOrderService
+    public class SqlOrderService : IOrderService
     {
         private readonly WebStoreDB _db;
         private readonly UserManager<User> _UserManager;
 
-        public SqlDataService(WebStoreDB db, UserManager<User> UserManadger)
+        public SqlOrderService(WebStoreDB db, UserManager<User> UserManadger)
         {
             this._db = db;
             _UserManager = UserManadger;
@@ -47,7 +47,7 @@ namespace WebStore.Services.InSQL
             return orders;
         }
 
-        public async Task<Order> GreateOrder(string userName, CartViewModel Cart, OrderViewModel orderViewModel)
+        public async Task<Order> CreateOrder(string userName, CartViewModel Cart, OrderViewModel orderViewModel)
         {
             var user = await _UserManager.FindByNameAsync(userName).ConfigureAwait(false);
 
