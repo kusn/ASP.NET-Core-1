@@ -57,11 +57,14 @@ namespace WebStore.Controllers
                 _CartService.GetViewModel(),
                 orderViewModel);
 
-            return RedirectToAction(nameof(OrderConfirmed), new { Id = order.Id});
+            _CartService.Clear();
+
+            return RedirectToAction(nameof(OrderConfirmed), new { order.Id});
         }
 
         public IActionResult OrderConfirmed(int id)
         {
+            ViewBag.OrderId = id;
             return View();
         }
     }
