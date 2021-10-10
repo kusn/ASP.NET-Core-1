@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using WebStore.Domain.Entities.Base;
-using WebStore.Domain.Identity;
+using WebStore.Domain.Entities.Identity;
 
 namespace WebStore.Domain.Entities.Orders
 {
