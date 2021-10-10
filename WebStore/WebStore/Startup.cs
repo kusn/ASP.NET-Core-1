@@ -6,11 +6,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using WebStore.DAL.Context;
 using WebStore.Data;
-using WebStore.Domain.Identity;
+using WebStore.Domain.Entities.Identity;
 using WebStore.Infrastructure.Conventions;
 using WebStore.Infrastructure.Middleware;
+using WebStore.Services;
 using WebStore.Services.InCookies;
 using WebStore.Services.InMemory;
 using WebStore.Services.InSQL;
@@ -29,8 +31,26 @@ namespace WebStore
                 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WebStoreDB>(opt =>
-            opt.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+            var database_type = Configuration["Database"];
+
+            switch (database_type)
+            {
+                default: throw new InvalidOperationException($"Тип БД {database_type} не поддерживается");
+
+                case "Sqlite":
+                    services.AddDbContext<WebStoreDB>(opt =>
+                        opt.UseSqlite(Configuration.GetConnectionString(database_type),
+                            o => o.MigrationsAssembly("WebStore.DAL.Sqlite")));
+                    break;
+
+                case "SqlServer":
+                    services.AddDbContext<WebStoreDB>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString(database_type)));
+                    break;
+            }
+
+            
+            
 
             services.AddIdentity<User, Role>(/*opt => { opt.}*/)
                 .AddEntityFrameworkStores<WebStoreDB>()
