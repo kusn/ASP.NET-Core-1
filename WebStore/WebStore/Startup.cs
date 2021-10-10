@@ -47,6 +47,10 @@ namespace WebStore
                     services.AddDbContext<WebStoreDB>(opt =>
                     opt.UseSqlServer(Configuration.GetConnectionString(database_type)));
                     break;
+
+                case "InMemory":
+                    services.AddDbContext<WebStoreDB>(opt => opt.UseInMemoryDatabase("WebStoreKUSN.db"));
+                    break;
             }
 
             
