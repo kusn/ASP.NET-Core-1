@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using WebStore.Domain.Entities.Base;
 using WebStore.Domain.Identity;
 
@@ -27,6 +28,9 @@ namespace WebStore.Domain.Entities.Orders
         public string Description { get; set; }
 
         public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+
+        [NotMapped]
+        public decimal TotalPrice => Items?.Sum(i => i.TotalItemPrice) ?? 0m;
     }
 
     public class OrderItem : Entity
