@@ -2,12 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebStore.DAL.Context;
-using WebStore.Domain.Identity;
+using WebStore.Domain.Entities.Identity;
 
 namespace WebStore.Data
 {
@@ -36,13 +35,18 @@ namespace WebStore.Data
             //var dbDeleted = await _db.Database.EnsureDeletedAsync();
             //var dbCreated = await _db.Database.EnsureCreatedAsync();
 
-            var pendingMigrations = await _db.Database.GetPendingMigrationsAsync();
-            var appliedMigrations = await _db.Database.GetAppliedMigrationsAsync();
-
-            if (pendingMigrations.Any())
+            if (_db.Database.ProviderName.EndsWith(".InMemory"))
+                await _db.Database.EnsureCreatedAsync();
+            else
             {
-                _Logger.LogInformation("Применение миграциЙ {0}", string.Join(",", pendingMigrations));
-                await _db.Database.MigrateAsync();
+                var pendingMigrations = await _db.Database.GetPendingMigrationsAsync();
+                var appliedMigrations = await _db.Database.GetAppliedMigrationsAsync();
+
+                if (pendingMigrations.Any())
+                {
+                    _Logger.LogInformation("Применение миграциЙ {0}", string.Join(",", pendingMigrations));
+                    await _db.Database.MigrateAsync();
+                }
             }
 
             try
